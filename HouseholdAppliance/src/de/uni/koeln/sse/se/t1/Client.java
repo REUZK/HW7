@@ -10,7 +10,6 @@ public class Client {
 
 
         //Initialise some household
-        List<HouseholdItem> householdItems = new ArrayList<>();
 
 
         Electronic microwaveOven = new Electronic("Microwave Oven", 37, 48, 27, 13, false);
@@ -25,7 +24,7 @@ public class Client {
 
 
         List<HouseholdItem> namesList = Arrays.asList(microwaveOven, tv, wineGlass, coffeeTable, bed, cupboard);
-        householdItems.addAll(namesList);
+        List<HouseholdItem> householdItems = new ArrayList<>(namesList);
         PackagingVisitor instructionVisitor = new PackagingVisitor();
         for (HouseholdItem item : householdItems) {
             item.accept(instructionVisitor);
